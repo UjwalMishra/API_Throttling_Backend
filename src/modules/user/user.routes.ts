@@ -4,6 +4,6 @@ import { authMiddleware } from "../../middlewares/auth.middleware";
 
 const router = Router();
 
-router.patch("/upgrade", authMiddleware, upgradeUserTier);
+router.patch("/tier", authMiddleware, upgradeUserTier);
 
 export default router;

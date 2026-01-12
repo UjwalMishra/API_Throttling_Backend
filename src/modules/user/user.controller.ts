@@ -10,11 +10,12 @@ export const upgradeUserTier = async (req: Request, res: Response) => {
 
   const { tier } = req.body;
 
-  if (tier !== UserTier.PREMIUM) {
+  if (![UserTier.FREE, UserTier.PREMIUM].includes(tier)) {
     return res.status(400).json({
-      message: "Invalid tier upgrade",
+      message: "Invalid tier value",
     });
   }
+
 
   const user = await upgradeUserTierService(req.user.id, tier);
 

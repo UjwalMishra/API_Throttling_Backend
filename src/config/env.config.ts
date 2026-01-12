@@ -4,6 +4,7 @@ dotenv.config();
 
 export const env = {
   PORT: process.env.PORT || 5000,
+  FRONTEND_URL: process.env.FRONTEND_URL as string,
   MONGO_URI: process.env.MONGO_URI as string,
   REDIS_URL: process.env.REDIS_URL as string,
   JWT_SECRET: process.env.JWT_SECRET as string,
